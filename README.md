@@ -1,12 +1,12 @@
 # leadsquare-scrollable-tabs
 
-##Status
-###Completed
-+draggable tabs
-+close
-+new tab
-+alert window
+## Status
+### Completed
++ draggable tabs
++ close
++ new tab
++ alert window
 
-###yet to implement
--max 10 windows
--handle scroll behaviour progrmatically
+### Yet to implement
+- max 10 windows
+- handle scroll behaviour progrmatically

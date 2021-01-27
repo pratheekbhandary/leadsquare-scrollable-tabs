@@ -5,6 +5,7 @@ import { TabDetailsType } from "./types";
 import { generateUUIDv4 } from "./util";
 const TABS = ["one", "two", "three", "four", "five"];
 function App() {
+  // TODO: abstract id generation
   const tabsWithID = useMemo<TabDetailsType[]>(
     () => TABS.map((tab) => ({ id: generateUUIDv4(), title: tab })),
     []

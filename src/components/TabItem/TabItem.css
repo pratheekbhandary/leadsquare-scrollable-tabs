@@ -1,0 +1,41 @@
+.item {
+  margin: 0 10px;
+  padding: 0 10px;
+  border: 1px solid #aaa;
+  background: #ececec;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  height: 40px;
+  width: 100px;
+  flex-shrink: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: "hidden";
+}
+.item:hover {
+  cursor: pointer;
+}
+
+.selected {
+  background: #fff;
+  color: #000;
+  z-index: 2;
+  border-bottom-color: #fff;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.item:hover svg.close {
+  color: black;
+  display: inline-block !important;
+  /* TODO: remove important*/
+}

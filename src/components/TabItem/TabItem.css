@@ -15,8 +15,16 @@
   align-items: center;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: "hidden";
+  box-sizing: border-box;
 }
+
+.item {
+  margin-left: auto; /* added  */
+}
+.item:last-child {
+  margin-right: auto; /* added  */
+}
+
 .item:hover {
   cursor: pointer;
 }

@@ -16,9 +16,10 @@ const { DragColumn } = ReactDragListView;
 interface ITabsProp {
   tabs: TabDetailsType[];
   children: (selectedTab: string) => React.ReactNode;
+  maxTabCount: number;
 }
 
-const Tabs: FC<ITabsProp> = ({ tabs, children }) => {
+const Tabs: FC<ITabsProp> = ({ tabs, children, maxTabCount }) => {
   const [selectedTab, setSeletedTab] = useState<string>(tabs[0]?.id || "");
   const [showModal, setShowModal] = useState<boolean>(false);
   const [tabsInDragOrder, setTabsInDragOrder] = useState<TabDetailsType[]>(
@@ -69,6 +70,15 @@ const Tabs: FC<ITabsProp> = ({ tabs, children }) => {
     setSeletedTab(newTab.id);
   }, [tabsInDragOrder]);
 
+  const onKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === "Enter") {
+        onAddNewTabConfirmation();
+      }
+    },
+    [onAddNewTabConfirmation]
+  );
+
   return (
     <div className="tab-container">
       <DragColumn nodeSelector="li" handleSelector="li" onDragEnd={onDragEnd}>
@@ -87,16 +97,19 @@ const Tabs: FC<ITabsProp> = ({ tabs, children }) => {
             className="new-tab"
             style={{ padding: "8px" }}
             onClick={() => setShowModal(true)}
+            disabled={maxTabCount <= tabsInDragOrder.length}
           >
             <AddTabIcon fontSize="small" />
           </IconButton>
         </TabRow>
       </DragColumn>
       <div className="tab-content">{children(selectedTab)}</div>
+
       {showModal && (
         <Modal>
           <div className="new-tab-modal">
-            Enter tab name: <input type="text" ref={inputRef} autoFocus />
+            Enter tab name:
+            <input type="text" ref={inputRef} autoFocus onKeyDown={onKeyDown} />
             <IconButton onClick={onAddNewTabConfirmation}>
               <Done />
             </IconButton>

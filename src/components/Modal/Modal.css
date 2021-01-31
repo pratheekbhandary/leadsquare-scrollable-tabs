@@ -19,4 +19,5 @@
   transform: translate(-50%, -50%);
   border: 10px solid #233c52;
   border-radius: 20px;
+  background-color: rgb(221, 221, 221, 0.8);
 }

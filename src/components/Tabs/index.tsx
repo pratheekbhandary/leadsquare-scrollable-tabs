@@ -10,7 +10,6 @@ import "./Tabs.css";
 import ReactDragListView from "react-drag-listview";
 import { TabDetailsType } from "../../types";
 import Modal from "../Modal";
-import { InputType } from "zlib";
 import { generateUUIDv4 } from "../../util";
 const { DragColumn } = ReactDragListView;
 interface ITabsProp {
@@ -52,7 +51,7 @@ const Tabs: FC<ITabsProp> = ({ tabs, children, maxTabCount }) => {
         return;
       }
       const filteredTabs = tabsInDragOrder.filter(
-        ({ id: idLoop }) => id != idLoop
+        ({ id: idLoop }) => id !== idLoop
       );
       setTabsInDragOrder(filteredTabs);
       setSeletedTab(filteredTabs[0].id);

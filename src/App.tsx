@@ -17,7 +17,7 @@ function App() {
           <div className="tab-display-content">
             <img
               src={`https://source.unsplash.com/random/${seletedTab}`}
-              alt="image not available"
+              alt="not available"
             />
             <span>Selected tab {seletedTab} </span>
           </div>

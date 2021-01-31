@@ -19,10 +19,13 @@ function App() {
               src={`https://source.unsplash.com/random/${seletedTab}`}
               alt="image not available"
             />
-            <span>Selected tab {seletedTab}</span>
+            <span>Selected tab {seletedTab} </span>
           </div>
         )}
       </Tabs>
+      <div className="disclaimer">
+        *images are randomly displayed from unsplash.com
+      </div>
     </div>
   );
 }

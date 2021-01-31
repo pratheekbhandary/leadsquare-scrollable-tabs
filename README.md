@@ -1,6 +1,6 @@
 # leadsquare-scrollable-tabs
 
-## Status
+## Deployed at: http://pratheekbhandary-leadsquare.netlify.app/
 
 ### Completed
 
